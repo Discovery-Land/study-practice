@@ -1,0 +1,20 @@
+-- Site   : Programmers
+-- Title  : 그룹별 조건에 맞는 식당 목록 출력하기 (LEVEL 4)
+-- Link   : https://school.programmers.co.kr/learn/courses/30/lessons/131124
+-- Date   : 2026-02-24
+
+-- MEMBER_PROFILE 테이블은 다음과 같으며 MEMBER_ID, MEMBER_NAME, TLNO, GENDER, DATE_OF_BIRTH
+-- REST_REVIEW 테이블은 다음과 같으며 REVIEW_ID, REST_ID, MEMBER_ID, REVIEW_SCORE, REVIEW_TEXT,REVIEW_DATE\
+-- 회원별 리뷰 수
+
+
+SELECT 
+    MP.MEMBER_NAME,
+    RR.REVIEW_TEXT,
+    DATE_FORMAT(RR.REVIEW_DATE, '%Y-%m-%d') REVIEW_DATE
+FROM MEMBER_PROFILE MP
+JOIN REST_REVIEW RR ON MP.MEMBER_ID = RR.MEMBER_ID
+GROUP BY MP.MEMBER_ID
+ORDER BY REVIEW_DATE, REVIEW_TEXT;
+
+-- 오답
