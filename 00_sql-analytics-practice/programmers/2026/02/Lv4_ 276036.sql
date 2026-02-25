@@ -8,11 +8,27 @@
 -- B : C# 스킬을 가진 개발자
 --  # CODE 1024
 -- # C : 그 외의 Front End 개발자
+--  # AND THEN CATEGORY Front End
 
-WITH skill as (
-    SELECT
-        
-    FROM SKILLCODES
-)
+SELECT # GROUP_CONCAT은 여러 행을 하나의 문자열로 합칠 때 사용
+    CASE
+        WHEN GROUP_CONCAT(S.NAME) LIKE '%Python%' 
+        AND GROUP_CONCAT(S.CATEGORY) LIKE '%Front End%'
+            THEN 'A'
+        WHEN GROUP_CONCAT(S.NAME) LIKE '%C#%' 
+            THEN 'B'
+        WHEN GROUP_CONCAT(S.CATEGORY) LIKE '%Front End%'
+            THEN 'C'
+        ELSE NULL
+    END AS GRADE,
+    D.ID,
+    MIN(D.EMAIL) AS EMAIL   # case는 alias도 나눌 수 있음
+FROM DEVELOPERS D
+JOIN SKILLCODES S ON (D.SKILL_CODE & S.CODE) = S.CODE
+GROUP BY D.ID, D.EMAIL
+HAVING GRADE IS NOT NULL
+ORDER BY GRADE ASC, ID ASC;
+    
 
--- 2진코드 문제 재학습 필요
+-- 필요한 코드의 합산 SUM, 비트 비교 연산 &, 스위치 ON은 > 0
+-- GROUP_CONCAT 복습 필요
