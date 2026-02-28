@@ -31,4 +31,3 @@ ORDER BY GRADE ASC, ID ASC;
     
 
 -- 필요한 코드의 합산 SUM, 비트 비교 연산 &, 스위치 ON은 > 0
--- GROUP_CONCAT 복습 필요
