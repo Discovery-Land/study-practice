@@ -1,7 +1,7 @@
 -- Site   : Programmers
 -- Title  : 월별 잡은 물고기 수 구하기 (LEVEL 3)
 -- Link   : https://school.programmers.co.kr/learn/courses/30/lessons/293260
--- Date   : 2026-01-18
+-- Date   : 2026-01-18 / 2026-03-01 (수정)
 
 
 SELECT
