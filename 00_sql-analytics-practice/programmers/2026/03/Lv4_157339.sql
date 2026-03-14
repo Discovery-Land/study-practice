@@ -20,3 +20,14 @@ SELECT *
 FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY 
 
 -- 늦잠-시간초과
+
+select
+    c.car_id,
+    c.car_type
+    daily_fee
+from
+    car_rental_company_car c
+join
+    car_rental_company_discount_plan p on c.car_type = p.car_type
+where
+     .car_type in ('ㅅㅔㄷㅏㄴ', 'suv')
