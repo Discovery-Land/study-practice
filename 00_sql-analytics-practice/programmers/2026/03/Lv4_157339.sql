@@ -1,7 +1,7 @@
 -- Site   : Programmers
 -- Title  : 특정 기간동안 대여 가능한 자동차들의 대여비용 구하기 (LEVEL 4)
 -- Link   : https://school.programmers.co.kr/learn/courses/30/lessons/157339
--- Date   : 2026-03-09
+-- Date   : 2026-03-09 / 2026-03-21 (복습)
 
 -- CAR_RENTAL_COMPANY_CAR 
 -- CAR_ID,      CAR_TYPE,       DAILY_FEE,          OPTIONS
